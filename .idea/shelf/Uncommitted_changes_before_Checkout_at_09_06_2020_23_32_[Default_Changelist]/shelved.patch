@@ -1,0 +1,66 @@
+Index: js/script.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>let money = prompt('Ваш месячный доход?'),\r\n    income = 'web-студия',\r\n    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),\r\n    deposit = confirm('Есть ли у вас депозит в банке?'),\r\n    expenses1 = prompt('Введите обязательную статью расходов?'),\r\n    amount1 = prompt('Во сколько это обойдется?'),\r\n    expenses2 = prompt('Введите обязательную статью расходов?'),\r\n    amount2 = prompt('Во сколько это обойдется?'),\r\n    budgetMonth = Number(money - amount1 - amount2);\r\n    budgetDay = budgetMonth / 30;\r\n    mission = 100000;\r\n    period = 4;\r\nconsole.log(typeof(money));\r\nconsole.log(typeof(income));\r\nconsole.log(typeof(deposit));\r\nconsole.log(addExpenses.length);\r\nconsole.log('Период равен ' + period + ' месяцам');\r\nconsole.log('Цель заработать ' + mission + ' рублей');\r\nconsole.log(addExpenses.toLowerCase().split(', '));\r\nconsole.log('Бюджет на месяц: ', budgetMonth);\r\nconsole.log('Цель будет достигнута за: ' + Math.ceil(mission / budgetMonth) + ' месяцев');\r\nconsole.log('Бюджет на день: ', Math.floor(budgetDay));\r\nif (budgetDay >= 1200) {\r\n    console.log('У вас высокий уровень дохода!');\r\n} else if (1200 > budgetDay >= 600) {\r\n    console.log('У вас средний уровень дохода');\r\n} else if (budgetDay < 600) {\r\n    console.log('К сожалению у вас уровень дохода ниже среднего');\r\n} else {\r\n    console.log('Что то пошло не так');\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- js/script.js	(revision f0ba3e133340373f1f096d5839c5c37a58333a08)
++++ js/script.js	(date 1591718674863)
+@@ -1,31 +1,5 @@
+-let money = prompt('Ваш месячный доход?'),
+-    income = 'web-студия',
+-    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
+-    deposit = confirm('Есть ли у вас депозит в банке?'),
+-    expenses1 = prompt('Введите обязательную статью расходов?'),
+-    amount1 = prompt('Во сколько это обойдется?'),
+-    expenses2 = prompt('Введите обязательную статью расходов?'),
+-    amount2 = prompt('Во сколько это обойдется?'),
+-    budgetMonth = Number(money - amount1 - amount2);
+-    budgetDay = budgetMonth / 30;
+-    mission = 100000;
+-    period = 4;
+-console.log(typeof(money));
+-console.log(typeof(income));
+-console.log(typeof(deposit));
+-console.log(addExpenses.length);
+-console.log('Период равен ' + period + ' месяцам');
+-console.log('Цель заработать ' + mission + ' рублей');
+-console.log(addExpenses.toLowerCase().split(', '));
+-console.log('Бюджет на месяц: ', budgetMonth);
+-console.log('Цель будет достигнута за: ' + Math.ceil(mission / budgetMonth) + ' месяцев');
+-console.log('Бюджет на день: ', Math.floor(budgetDay));
+-if (budgetDay >= 1200) {
+-    console.log('У вас высокий уровень дохода!');
+-} else if (1200 > budgetDay >= 600) {
+-    console.log('У вас средний уровень дохода');
+-} else if (budgetDay < 600) {
+-    console.log('К сожалению у вас уровень дохода ниже среднего');
+-} else {
+-    console.log('Что то пошло не так');
+-}
+\ No newline at end of file
++'use script';
++function outputMessage() {
++    console.log('hello');
++}
++outputMessage();
+\ No newline at end of file
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"ru\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>Document</title>\r\n</head>\r\n<body>\r\n<script src=\"js/script.js\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.html	(revision f0ba3e133340373f1f096d5839c5c37a58333a08)
++++ index.html	(date 1591724530482)
+@@ -6,6 +6,7 @@
+   <title>Document</title>
+ </head>
+ <body>
++  <h1>Функции</h1>
+ <script src="js/script.js"></script>
+ </body>
+ </html>
+\ No newline at end of file

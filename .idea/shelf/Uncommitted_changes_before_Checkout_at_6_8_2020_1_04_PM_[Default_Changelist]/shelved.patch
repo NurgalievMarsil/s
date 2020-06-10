@@ -1,0 +1,61 @@
+Index: js/script.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>let num = 266219;\r\nnum = String(num);\r\nlet button = document.querySelector('button');\r\nlet div = document.querySelector('.out');\r\nbutton.onclick = () => {\r\n  let prov = num[0] * num[1] * num[2] * num[3] * num[4] * num[5];\r\n  prov = prov ** 3;\r\n  prov = String(prov);\r\n  div.innerHTML = prov.substr(0, 2);\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- js/script.js	(revision 7d658a061692a4407c5bfbe24171e4457e81ed15)
++++ js/script.js	(date 1591617272434)
+@@ -1,10 +1,19 @@
+-let num = 266219;
+-num = String(num);
+-let button = document.querySelector('button');
+-let div = document.querySelector('.out');
+-button.onclick = () => {
+-  let prov = num[0] * num[1] * num[2] * num[3] * num[4] * num[5];
+-  prov = prov ** 3;
+-  prov = String(prov);
+-  div.innerHTML = prov.substr(0, 2);
+-}
+\ No newline at end of file
++'use strict'
++// let question = confirm('Тебе есть 18 лет?'); // boolean
++// let question2 = +prompt('Сколько тебе лет?', '18'); // если нажать отменить будет null
++// console.log(question2);
++//
++// console.log(Boolean(5));
++// console.log(!!5);
++//
++// console.log(typeof String([1,2,3]));
++// console.log(typeof (10 + ''));
++// console.log(typeof (10..toString()));
++//
++// console.log(typeof (Number('33')));
++// console.log(typeof +'10');
++//
++// console.log(parseInt('10 px')); // не умеет работать с дробным
++// console.log(parseFloat('10.5 px'));
++let result = true ? 1 : 0;
++console.log('result: ', result);
+\ No newline at end of file
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"ru\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>Document</title>\r\n</head>\r\n<body>\r\n  <button class=\"button\">SSS</button>\r\n  <div class=\"out\"></div>\r\n  <script src=\"js/script.js\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.html	(revision 7d658a061692a4407c5bfbe24171e4457e81ed15)
++++ index.html	(date 1591607328162)
+@@ -6,8 +6,7 @@
+   <title>Document</title>
+ </head>
+ <body>
+-  <button class="button">SSS</button>
+-  <div class="out"></div>
++
+   <script src="js/script.js"></script>
+ </body>
+ </html>
+\ No newline at end of file

@@ -1,0 +1,76 @@
+Index: js/script.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>let num = 266219;\r\nnum = String(num);\r\nlet button = document.querySelector('button');\r\nlet div = document.querySelector('.out');\r\nbutton.onclick = () => {\r\n  let prov = num[0] * num[1] * num[2] * num[3] * num[4] * num[5];\r\n  prov = prov ** 3;\r\n  prov = String(prov);\r\n  div.innerHTML = prov.substr(0, 2);\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- js/script.js	(revision 7d658a061692a4407c5bfbe24171e4457e81ed15)
++++ js/script.js	(date 1591780895261)
+@@ -1,10 +1,55 @@
+-let num = 266219;
+-num = String(num);
+-let button = document.querySelector('button');
+-let div = document.querySelector('.out');
+-button.onclick = () => {
+-  let prov = num[0] * num[1] * num[2] * num[3] * num[4] * num[5];
+-  prov = prov ** 3;
+-  prov = String(prov);
+-  div.innerHTML = prov.substr(0, 2);
+-}
+\ No newline at end of file
++let money = prompt('Ваш месячный доход?'),
++    income = 'web-студия',
++    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
++    deposit = confirm('Есть ли у вас депозит в банке?'),
++    expenses1 = prompt('Введите обязательную статью расходов?'),
++    amount1 = +prompt('Во сколько это обойдется?'),
++    expenses2 = prompt('Введите обязательную статью расходов?'),
++    amount2 = +prompt('Во сколько это обойдется?'),
++    mission = 100000;
++    period = 4;
++let showTypeOf = function(data) {
++    console.log(data, typeof(data));
++};
++showTypeOf(Number(money));
++showTypeOf(income);
++showTypeOf(deposit);
++let getExpensesMonth = function(a, b) {
++    return a + b;
++};
++console.log(getExpensesMonth(amount1, amount2));
++let getAccumulatedMonth = function(x, y) {
++    return  x - y;
++}
++let accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth(amount1, amount2));
++    budgetDay = accumulatedMonth / 30;
++console.log(accumulatedMonth);
++console.log(budgetDay);
++let getTargetMonth = function(a, b) {
++    return Math.ceil(a / b);
++}
++console.log(getTargetMonth(mission, accumulatedMonth));
++
++
++console.log(addExpenses.length);
++console.log('Период равен ' + period + ' месяцам');
++console.log('Цель заработать ' + mission + ' рублей');
++console.log(addExpenses.toLowerCase().split(', '));
++console.log('Бюджет на день: ', Math.floor(budgetDay));
++
++let getStatusIncome = function () {
++    switch (true) {
++        case budgetDay >= 1200:
++            ('У вас высокий уровень дохода!');
++            break;
++        case budgetDay >= 600 && budgetDay < 1200:
++            console.log('У вас средний уровень дохода');
++            break;
++        case budgetDay >= 0 && budgetDay < 600:
++            console.log('К сожалению у вас уровень дохода ниже среднего');
++            break;
++        default:
++            console.log('Что то пошло не так');
++    }
++}
++getStatusIncome();
