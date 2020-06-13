@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f940a3c7-0d83-4fde-86a3-76601fd14d6f" name="Default Changelist" comment="" />
+    <list default="true" id="f940a3c7-0d83-4fde-86a3-76601fd14d6f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +14,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson05" />
+        <entry key="$PROJECT_DIR$" value="lesson06" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,6 +69,12 @@
       <workItem from="1591741903341" duration="3453000" />
       <workItem from="1591773709156" duration="5444000" />
       <workItem from="1591781228864" duration="82000" />
+      <workItem from="1591782544074" duration="5472000" />
+      <workItem from="1591792142297" duration="13000000" />
+      <workItem from="1591873190988" duration="5948000" />
+      <workItem from="1591951071507" duration="1799000" />
+      <workItem from="1591996486003" duration="1268000" />
+      <workItem from="1592006737328" duration="1191000" />
     </task>
     <task id="LOCAL-00001" summary="feat: f">
       <created>1591643848003</created>
