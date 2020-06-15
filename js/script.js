@@ -1,13 +1,19 @@
-let money = prompt('Ваш месячный доход?'),
+let isNumber = function(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n)
+}
+
+
+let money,
     income = 'web-студия',
     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
     deposit = confirm('Есть ли у вас депозит в банке?'),
-    // expenses1 = prompt('Введите обязательную статью расходов?'),
-    // amount1 = +prompt('Во сколько это обойдется?'),
-    // expenses2 = prompt('Введите обязательную статью расходов?'),
-    // amount2 = +prompt('Во сколько это обойдется?'),
-    mission = 100000;
-period = 4;
+    mission = 100000,
+    period = 4;
+
+do {
+  money = prompt('Ваш месячный доход?');
+} while(!isNumber(money));
+
 let showTypeOf = function(data) {
   console.log(data, typeof(data));
 };
@@ -40,10 +46,9 @@ let accumulatedMonth = getAccumulatedMonth();
 budgetDay = accumulatedMonth / 30;
 console.log(accumulatedMonth);
 console.log(budgetDay);
-let getTargetMonth = function(a, b) {
-  return Math.ceil(a / b);
+let getTargetMonth = function() {
+  return Math.ceil(mission / accumulatedMonth);
 }
-console.log(getTargetMonth(mission, accumulatedMonth));
 
 
 console.log(addExpenses.length);
