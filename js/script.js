@@ -53,7 +53,8 @@ appData.getAccumulatedMonth();
 console.log('Расходы за месяц: ' + appData.expensesAmount);
 
 appData.getTargetMonth = function() {
-  return Math.ceil(appData.mission / appData.budgetMonth);
+  return (Math.ceil(appData.mission / appData.budgetMonth) < 0) ?
+  'Цель не будет достигнута' : 'Цель будет достигнута за ' + (appData.mission / appData.budgetMonth) + ' месяцев';
 }
 
 console.log('Цель будет достигнута за ' + Math.ceil(appData.getTargetMonth()) + ' месяца');
