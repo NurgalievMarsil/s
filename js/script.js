@@ -44,16 +44,6 @@ let appData = {
   expensesMonth: 0,
   mission: 100000,
   period: 4,
-  getExpensesMonth: function() {
-
-    for (let i = 0; i < 2; i++) {
-
-        appData.expenses[i] = stringValidate('Введите обязательную стать расходов?', 'Данные должны быть строкой! Введите обязательную стать расходов?', 'Жкх');
-
-        appData.expensesMonth += numValidate('Во сколько это обойдется?', 'Данные должны быть числом! Во сколько это обойдется?', '15000');
-    }
-    return appData.expensesMonth;
-  },
   getTargetMonth: function() {
     return Math.ceil(((appData.mission / appData.budgetDay) < 0) ? 'Цель не будет достигнута' : 'Цель будет достигнута за ' + (appData.mission / appData.budgetMonth) + ' месяцев');
   },
@@ -74,9 +64,30 @@ let appData = {
       appData.income[itemIncome] = cashIncome;
     }
 
-    let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
-        appData.addExpenses = addExpenses.toLowerCase().split(', ');
-        appData.deposit = confirm('Есть ли у вас депозит в банке?');
+    const addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Кино, Театр');
+    let expensesArticle,
+    expensesMoney;
+
+    if (addExpenses !== null) {
+      appData.addExpenses = addExpenses.toLowerCase().split(', ');
+    }
+    
+    appData.deposit = confirm('Есть ли у вас депозит в банке?');
+
+    for (let i = 0; i < 2; i++) { // Сделал две итерации, в ТЗ к домашке не указано точное количество
+      expensesArticle = stringValidate('Введите обязательную статью расходов?',
+        'Данные должны быть строкой! Введите обязательную статью расходов?',
+        'Ипотека');
+      expensesMoney = numValidate('Во сколько это обойдётся?',
+        'Данные должны быть числом! Во сколько это обойдётся?',
+        '10000');
+      appData.expenses[expensesArticle] = expensesMoney;
+    }
+  },
+  getExpensesMonth: () => {
+    for (let prop in appData.expenses) {
+      appData.expensesMonth += appData.expenses[prop];
+    }
   },
   getStatusIncome: function () {
     switch (true) {
@@ -123,11 +134,11 @@ let appData = {
 };
 appData.budget = Number(money);
 appData.asking();
-appData.expensesAmount = appData.getExpensesMonth()
 appData.getBudget();
 appData.getInfoDeposit();
+appData.getExpensesMonth();
 
-console.log('Расходы за месяц: ' + appData.expensesAmount);
+console.log('Расходы на месяц: ' + appData.expensesMonth);
 console.log(appData.calcSavedMoney());
 console.log(appData.showAddExpenses());
 
