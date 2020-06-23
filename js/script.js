@@ -1,39 +1,28 @@
 'use strict';
 
-const
-  startButton = document.getElementById('start'),
-  incomeAddButton = document.getElementsByTagName('button')[0],
-  expensesAddButton = document.getElementsByTagName('button')[1],
-  depositCheck = document.querySelector('#deposit-check'),
-  additionalIncomeItem = document.querySelectorAll('.additional_income-item'),
-  budgetDayValue = document.getElementsByClassName('budget_day-value'),
-  expensesMonthValue = document.getElementsByClassName('expenses_month-value'),
-  additionalIncomeValue = document.getElementsByClassName('additional_income-value'),
-  additionalExpensesValue = document.getElementsByClassName('additional_expenses-value'),
-  incomePeriodValue = document.getElementsByClassName('income_period-value'),
-  targetMonthValue = document.getElementsByClassName('target_month-value'),
-  resultBudgetMonth = document.querySelector('.result-budget_month'),
-  expensesTitle = document.querySelector('.expenses-title'),
-  expensesAmount = document.querySelector('.expenses-amount'),
-  salaryAmount = document.querySelector('.salary-amount'),
-  additionalExpensesItem = document.querySelector('.additional_expenses-item'),
-  targetAmount = document.querySelector('.target-amount'),
-  periodSelect = document.querySelector('.period-select');
-console.log('startButton: ', startButton);
-console.log('incomeAddButton: ', incomeAddButton);
-console.log('expensesAddButton: ', expensesAddButton);
-console.log('depositCheck: ', depositCheck);
-console.log('additionalIncomeItem: ', additionalIncomeItem);
-console.log('budgetDayValue: ', budgetDayValue);
-console.log('expensesMonthValue: ', expensesMonthValue);
-console.log('additionalIncomeValue: ', additionalIncomeValue);
-console.log('additionalExpensesValue: ', additionalExpensesValue);
-console.log('incomePeriodValue: ', incomePeriodValue);
-console.log('targetMonthValue: ', targetMonthValue);
-console.log('resultBudgetMonth: ', resultBudgetMonth);
-console.log('expensesTitle: ', expensesTitle);
-console.log('expensesAmount: ', expensesAmount);
-console.log('salaryAmount: ', salaryAmount);
-console.log('additionalExpensesItem: ', additionalExpensesItem);
-console.log('targetAmount: ', targetAmount);
-console.log('periodSelect: ', periodSelect);
+const collections = document.querySelectorAll('.book'),
+  elem = document.querySelectorAll('a'),
+  spam = document.querySelector('.adv'),
+  elem2 = document.querySelectorAll('li'),
+  newElem = document.createElement('li');
+
+collections[1].after(collections[0]);
+collections[3].before(collections[4]);
+collections[5].after(collections[2]);
+
+document.body.style.backgroundImage = 'url(./image/you-dont-know-js.jpg)';
+
+elem[4].textContent = 'Книга 3. this и Прототипы Объектов';
+
+spam.remove();
+
+console.log(elem2);
+elem2[3].after(elem2[6]);
+elem2[4].before(elem2[8]);
+
+elem2[47].after(elem2[55]);
+elem2[55].after(elem2[49]);
+elem2[49].after(elem2[50]);
+
+elem2[25].append(newElem);
+newElem.textContent = 'Глава 8: За пределами ES6';
